@@ -16,12 +16,14 @@ namespace Cranklog_Mark3.Controllers
         private Cranklog_Mark3Context db = new Cranklog_Mark3Context();
 
         // GET: Bikes
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Bikes.ToList());
         }
 
         // GET: Bikes/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace Cranklog_Mark3.Controllers
         }
 
         // GET: Bikes/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +50,7 @@ namespace Cranklog_Mark3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "bikeId,bikeFrameNumber,bikeBrand,bikeMode,bikeColoer,bikePrice")] Bike bike)
         {
             if (ModelState.IsValid)
@@ -60,6 +64,7 @@ namespace Cranklog_Mark3.Controllers
         }
 
         // GET: Bikes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +84,7 @@ namespace Cranklog_Mark3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "bikeId,bikeFrameNumber,bikeBrand,bikeMode,bikeColoer,bikePrice")] Bike bike)
         {
             if (ModelState.IsValid)
@@ -91,6 +97,7 @@ namespace Cranklog_Mark3.Controllers
         }
 
         // GET: Bikes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +115,7 @@ namespace Cranklog_Mark3.Controllers
         // POST: Bikes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Bike bike = db.Bikes.Find(id);
