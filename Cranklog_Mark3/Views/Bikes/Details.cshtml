@@ -1,0 +1,59 @@
+﻿@model CrankLog_Mark3.Models.Bike
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bike</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.bikeFrameNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bikeFrameNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bikeBrand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bikeBrand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bikeMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bikeMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bikeColoer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bikeColoer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bikePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bikePrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.bikeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

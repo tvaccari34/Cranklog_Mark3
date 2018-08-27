@@ -1,0 +1,65 @@
+﻿@model CrankLog_Mark3.Models.Bike
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Bike</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.bikeFrameNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bikeFrameNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bikeBrand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bikeBrand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bikeMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bikeMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bikeColoer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bikeColoer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bikePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bikePrice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

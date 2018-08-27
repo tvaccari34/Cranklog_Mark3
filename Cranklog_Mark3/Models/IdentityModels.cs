@@ -29,5 +29,7 @@ namespace Cranklog_Mark3.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<CrankLog_Mark3.Models.Bike> Bikes { get; set; }
     }
 }
